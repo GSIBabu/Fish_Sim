@@ -127,3 +127,18 @@ This document outlines the structure and functionality of the `Fish_sim_cla` HTM
 ## 5. Fixes
 
 *   **Stray Code Removal:** Removed misplaced JavaScript code comments and function fragments from the very beginning of the HTML document (before `<!DOCTYPE html>`) that were incorrectly rendered as text content. 
+*   **Viewport Rendering:** Corrected the `render` function (after a previous incorrect swap) to draw the appropriate camera's view into each designated viewport area (`cameraTop` into Top area, `cameraSide` into Side area, `cameraFront` into Front area), ensuring `renderer.setScissor` calls were retained.
+
+## 6. UI Enhancements
+
+*   **Metric Update Fix:** Corrected JavaScript in the `animate` function to update the `.textContent` of the correct elements (`#frictionDisplayFixed`, `#speedDisplayFixed`), ensuring metrics display dynamically.
+*   **Metric Badge Styling:** Applied CSS changes to the metric badges:
+    *   Increased font size and weight for labels (`.metric-badge-label`).
+    *   Added IDs (`#frictionBadge`, `#speedBadge`) to the badge `div`s.
+    *   Applied distinct background gradients via CSS to `#frictionBadge` (red/orange) and `#speedBadge` (blue/cyan) for visual differentiation.
+    *   Refined padding, border-radius, and box-shadow for a cleaner look. 
+
+## 7. Debugging
+
+*   **Viewport Boundaries:** ~~Temporarily added background colors (Red for Top, Green for Side, Blue for Front) to each viewport during rendering (`render` function) to visually confirm viewport boundaries and label placement.~~ (Debugging complete, code removed). 
+*   **Front Label Visibility:** Added `console.log` to `updateViewLabels` to check if the positioning logic for the `frontViewLabel` is executing and what coordinates are being applied.

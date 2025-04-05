@@ -189,25 +189,39 @@
         }
         
         .metric-badge {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75); /* Slightly darker background */
             color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 8px 16px; /* Adjusted padding */
+            border-radius: 12px; /* Slightly more rounded */
+            backdrop-filter: blur(5px); /* Increase blur slightly */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Adjusted shadow */
             display: flex;
             justify-content: space-between;
-            min-width: 180px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center; /* Center items vertically */
+            min-width: 190px; /* Slightly wider */
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more visible border */
+            transition: background-color 0.3s ease; /* Add transition */
         }
         
         .metric-badge-value {
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 700; /* Bolder */
+            font-size: 20px; /* Larger font size */
+            margin-left: 8px; /* Add some space between label and value */
         }
         
         .metric-badge-label {
-            opacity: 0.9;
+            opacity: 0.85; /* Slightly less opaque */
+            font-size: 15px; /* Slightly larger label */
+            font-weight: 600; /* Make label semi-bold */
+        }
+        
+        /* Custom backgrounds for specific badges */
+        #frictionBadge {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.7) 0%, rgba(217, 119, 6, 0.7) 100%); /* Red-Orange Gradient */
+        }
+        
+        #speedBadge {
+             background: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(14, 165, 233, 0.7) 100%); /* Blue-Cyan Gradient */
         }
         
         /* Compact control panel design to avoid scrolling */
@@ -245,11 +259,11 @@
         
         <!-- Fixed metrics display -->
         <div class="metrics-display absolute top-4 right-4">
-            <div class="metric-badge">
+            <div id="frictionBadge" class="metric-badge">
                 <span class="metric-badge-label">ხახუნი:</span>
                 <span id="frictionDisplayFixed" class="metric-badge-value">0.00</span>
             </div>
-            <div class="metric-badge">
+            <div id="speedBadge" class="metric-badge">
                 <span class="metric-badge-label">სიჩქარე:</span>
                 <span id="speedDisplayFixed" class="metric-badge-value">0.00</span>
             </div>
@@ -958,9 +972,9 @@
             metrics.speed = (avgSpeed * 10) / (1 + metrics.friction * 2); // Example formula
             metrics.speed = Math.max(0.01, metrics.speed); // Ensure speed doesn't go to zero
 
-            // Update UI Displays
-            if (frictionDisplay) frictionDisplay.textContent = metrics.friction.toFixed(2);
-            if (speedDisplay) speedDisplay.textContent = metrics.speed.toFixed(2);
+            // Update UI Displays - Target the correct 'Fixed' elements
+            if (frictionDisplayFixed) frictionDisplayFixed.textContent = metrics.friction.toFixed(2);
+            if (speedDisplayFixed) speedDisplayFixed.textContent = metrics.speed.toFixed(2);
 
             // --- Render ---
             render();
