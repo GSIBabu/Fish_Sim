@@ -123,3 +123,7 @@ This document outlines the structure and functionality of the `Fish_sim_cla` HTM
 
 *   **Layout:** Modified the main layout to stack vertically (`flex-col`) on small screens and transition to horizontal (`md:flex-row`) on medium screens and larger. The simulation area takes up the top half (`h-1/2`) on small screens, while the control panel takes the bottom half (`h-auto`, `w-full`). On larger screens, the layout reverts to the side-by-side configuration (`md:h-full`, `md:w-72`).
 *   **Metrics Display:** Updated the positioning of the fixed metrics display (`.metrics-display`) to use Tailwind utility classes (`absolute top-4 right-4`) instead of a fixed pixel offset, making it relative to the simulation container. 
+
+## 5. Fixes
+
+*   **Stray Code Removal:** Removed misplaced JavaScript code comments and function fragments from the very beginning of the HTML document (before `<!DOCTYPE html>`) that were incorrectly rendered as text content. 
