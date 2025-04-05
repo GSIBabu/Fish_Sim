@@ -62,6 +62,7 @@
         let animationFrameId;
 
         const viewPadding = 15; // Padding between views in pixels
+        const frustumSize = 50; // Adjust this based on model size
         const viewportInfo = {
             top: { x: 0, y: 0, width: 0, height: 0 },
             side: { x: 0, y: 0, width: 0, height: 0 },
@@ -115,12 +116,6 @@
             scene.add(directionalLight2);
 
             // Cameras (Orthographic for views)
-            const frustumSize = 50; // Adjust this based on model size
-
-            updateViewports(); // Calculate initial viewports
-
-            // --- Create Cameras ---
-            // NOTE: Aspect ratio needs to be updated on resize
             const aspectTop = viewportInfo.top.width / viewportInfo.top.height;
             const aspectSide = viewportInfo.side.width / viewportInfo.side.height;
             const aspectFront = viewportInfo.front.width / viewportInfo.front.height;
@@ -171,7 +166,7 @@
             if (loadingIndicator) loadingIndicator.style.display = 'block';
 
             const loader = new OBJLoader();
-            const modelPath = '@21859_Rainbow_Trout_v1.obj'; // Make sure this path is correct!
+            const modelPath = 'https://raw.githubusercontent.com/GSIBabu/Fish_Sim/main/21859_Rainbow_Trout_v1.obj';
 
             loader.load(
                 modelPath,
