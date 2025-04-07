@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>გამარტივებული თევზის სიმულაცია</title>
+    <title>თევზის მამოძრავებელი სისტემის სიმულაცია - Xპერიმენტ Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -23,7 +23,7 @@
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             padding: 4px 8px;
-            font-size: 12px;
+            font-size: 16px;
             border-radius: 4px;
             pointer-events: none; /* Don't interfere with container */
             z-index: 10;
@@ -31,7 +31,7 @@
         /* Basic slider look */
         input[type="range"] { accent-color: #3b82f6; }
         .value-indicator {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 500;
             color: #4b5563;
             background-color: #e5e7eb;
@@ -88,12 +88,12 @@
         }
         .metric-badge-value {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 20px;
             margin-left: 8px;
         }
         .metric-badge-label {
             opacity: 0.8;
-            font-size: 13px;
+            font-size: 16px;
         }
          /* Custom backgrounds for specific badges (optional) */
         #frictionBadge {
@@ -101,10 +101,6 @@
         }
         #speedBadge {
              background: linear-gradient(135deg, rgba(59, 130, 246, 0.7) 0%, rgba(14, 165, 233, 0.7) 100%); /* Blue-Cyan Gradient */
-        }
-        /* Custom style for even smaller copyright text */
-        .copyright-text {
-            font-size: 10px; /* Smaller than text-xs */
         }
 
     </style>
@@ -159,52 +155,52 @@
     <!-- Stacks below wrapper on mobile, fixed width side panel on large screens -->
     <!-- Mobile: Fixed 2/5 height, no scroll -->
     <div class="w-full lg:w-64 bg-white p-2 lg:p-4 shadow-lg border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col gap-1 lg:gap-4 overflow-hidden lg:overflow-y-auto h-1/2 lg:h-screen flex-shrink-0"> <!-- Changed from h-2/5 -->
-        <h2 class="text-lg font-semibold text-black border-b border-gray-300 pb-0.5 lg:pb-2">მართვის პანელი</h2>
+        <h2 class="text-2xl font-semibold text-black border-b border-gray-300 pb-0.5 lg:pb-2">მართვის პანელი</h2> <!-- Changed from text-xl -->
 
         <div>
-            <h3 class="text-lg font-semibold text-gray-800 text-center">ფორმა და ზომა</h3>
+            <h3 class="text-2xl font-semibold text-gray-800 text-center">ფორმა და ზომა</h3> <!-- Changed from text-xl -->
             <!-- Mobile: 2-column grid | Desktop: 1-column flex -->
             <div class="grid grid-cols-2 gap-x-3 lg:gap-x-4 gap-y-0.5 lg:flex lg:flex-col lg:gap-2"> <!-- Removed text-sm base -->
                 <!-- Original Layout (Label above Slider+Value) - Items will flow into grid -->
                 <div>
-                    <label for="lengthSlider" class="block text-gray-700 font-medium text-base">სიგრძე</label>
+                    <label for="lengthSlider" class="block text-gray-700 font-medium text-lg">სიგრძე</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="lengthSlider" min="1" max="5" value="3" step="0.1" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="lengthSlider" min="1" max="5" value="3" step="0.1" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="lengthValue" class="value-indicator">3.0</span>
                     </div>
                 </div>
                  <div>
-                    <label for="widthSlider" class="block text-gray-700 font-medium text-base">სიგანე</label>
+                    <label for="widthSlider" class="block text-gray-700 font-medium text-lg">სიგანე</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="widthSlider" min="0.2" max="1.5" value="0.5" step="0.05" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="widthSlider" min="0.2" max="1.5" value="0.5" step="0.05" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="widthValue" class="value-indicator">0.50</span>
                     </div>
                 </div>
                  <div>
-                    <label for="heightSlider" class="block text-gray-700 font-medium text-base">სიმაღლე</label>
+                    <label for="heightSlider" class="block text-gray-700 font-medium text-lg">სიმაღლე</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="heightSlider" min="0.2" max="1.5" value="0.4" step="0.05" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="heightSlider" min="0.2" max="1.5" value="0.4" step="0.05" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="heightValue" class="value-indicator">0.40</span>
                     </div>
                 </div>
                  <div>
-                    <label for="pointinessSlider" class="block text-gray-700 font-medium text-base">წვეტიანობა</label>
+                    <label for="pointinessSlider" class="block text-gray-700 font-medium text-lg">წვეტიანობა</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="pointinessSlider" min="0.1" max="1" value="0.5" step="0.05" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="pointinessSlider" min="0.1" max="1" value="0.5" step="0.05" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="pointinessValue" class="value-indicator">0.50</span>
                     </div>
                 </div>
                  <div>
-                    <label for="roundnessSlider" class="block text-gray-700 font-medium text-base">სიმრგვალე</label>
+                    <label for="roundnessSlider" class="block text-gray-700 font-medium text-lg">სიმრგვალე</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="roundnessSlider" min="0.1" max="1" value="0.6" step="0.05" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="roundnessSlider" min="0.1" max="1" value="0.6" step="0.05" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="roundnessValue" class="value-indicator">0.60</span>
                     </div>
                 </div>
                  <div>
-                    <label for="tailFinSizeSlider" class="block text-gray-700 font-medium text-base">კუდის ფარფლის ზომა</label>
+                    <label for="tailFinSizeSlider" class="block text-gray-700 font-medium text-lg">კუდის ფარფლის ზომა</label> <!-- Changed from text-base -->
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="tailFinSizeSlider" min="0.1" max="1.5" value="0.5" step="0.05" class="flex-grow h-4 lg:h-auto"> <!-- Mobile: h-4 -->
+                        <input type="range" id="tailFinSizeSlider" min="0.1" max="1.5" value="0.5" step="0.05" class="flex-grow h-6 lg:h-auto"> <!-- Increased mobile height from h-4 -->
                         <span id="tailFinSizeValue" class="value-indicator">0.50</span>
                     </div>
                 </div>
@@ -213,42 +209,42 @@
 
         <!-- Appearance Section -->
         <div class="border-t border-gray-300 pt-1 lg:pt-3">
-            <h3 class="text-lg font-semibold text-gray-800 text-center">ანატომიური თვისებები</h3>
+            <h3 class="text-2xl font-semibold text-gray-800 text-center">ანატომიური თვისებები</h3> <!-- Changed from text-xl -->
             <!-- Mobile: 2-column grid | Desktop: 1-column flex -->
             <div class="grid grid-cols-2 gap-x-3 lg:gap-x-4 gap-y-0 lg:flex lg:flex-col lg:gap-1.5">
                 <div class="flex items-center justify-between scale-90 lg:scale-100 origin-left">
-                    <label for="mucusToggle" class="text-gray-700 font-medium mr-1 text-base">ლორწოს გამოყოფა</label>
-                    <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0">
-                        <input type="checkbox" name="mucusToggle" id="mucusToggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
-                        <label for="mucusToggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <label for="mucusToggle" class="text-gray-700 font-medium mr-1 text-lg">ლორწოს გამოყოფა</label> <!-- Changed from text-base -->
+                    <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0"> <!-- Increased width from w-10 -->
+                        <input type="checkbox" name="mucusToggle" id="mucusToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/> <!-- Increased size from w-5 h-5 -->
+                        <label for="mucusToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label> <!-- Increased height from h-5 -->
                     </div>
                 </div>
                 <div class="flex items-center justify-between scale-90 lg:scale-100 origin-left">
-                    <label for="pectoralFinToggle" class="text-gray-700 font-medium mr-1 text-base">მკერდის ფარფლები</label>
-                    <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0">
-                        <input type="checkbox" name="pectoralFinToggle" id="pectoralFinToggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
-                        <label for="pectoralFinToggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <label for="pectoralFinToggle" class="text-gray-700 font-medium mr-1 text-lg">მკერდის ფარფლები</label> <!-- Changed from text-base -->
+                    <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0"> <!-- Increased width from w-10 -->
+                        <input type="checkbox" name="pectoralFinToggle" id="pectoralFinToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/> <!-- Increased size from w-5 h-5 -->
+                        <label for="pectoralFinToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label> <!-- Increased height from h-5 -->
                     </div>
                 </div>
                 <div class="flex items-center justify-between scale-90 lg:scale-100 origin-left">
-                    <label for="pelvicFinToggle" class="text-gray-700 font-medium mr-1 text-base">მუცლის ფარფლები</label>
-                    <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0">
-                        <input type="checkbox" name="pelvicFinToggle" id="pelvicFinToggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
-                        <label for="pelvicFinToggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <label for="pelvicFinToggle" class="text-gray-700 font-medium mr-1 text-lg">მუცლის ფარფლები</label> <!-- Changed from text-base -->
+                    <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0"> <!-- Increased width from w-10 -->
+                        <input type="checkbox" name="pelvicFinToggle" id="pelvicFinToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/> <!-- Increased size from w-5 h-5 -->
+                        <label for="pelvicFinToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label> <!-- Increased height from h-5 -->
                     </div>
                 </div>
                 <div class="flex items-center justify-between scale-90 lg:scale-100 origin-left">
-                    <label for="tailFinToggle" class="text-gray-700 font-medium mr-1 text-base">კუდის ფარფლი</label>
-                    <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0">
-                        <input type="checkbox" name="tailFinToggle" id="tailFinToggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
-                        <label for="tailFinToggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                    <label for="tailFinToggle" class="text-gray-700 font-medium mr-1 text-lg">კუდის ფარფლი</label> <!-- Changed from text-base -->
+                    <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in flex-shrink-0"> <!-- Increased width from w-10 -->
+                        <input type="checkbox" name="tailFinToggle" id="tailFinToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/> <!-- Increased size from w-5 h-5 -->
+                        <label for="tailFinToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label> <!-- Increased height from h-5 -->
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <div class="copyright-text text-gray-600 mt-auto pt-0.5 lg:pt-1 border-t border-gray-300 text-center"> <!-- Used custom class, removed text-xs -->
+        <div class="text-sm text-gray-600 mt-auto pt-0.5 lg:pt-1 border-t border-gray-300 text-center"> <!-- Changed from text-xs -->
              Xპერიმენტ Lab © 2025 შპს "საქართველოს სამეცნიერო ინდუსტრიები"
         </div>
     </div>
