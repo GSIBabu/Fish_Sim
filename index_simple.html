@@ -6,7 +6,7 @@
     <title>თევზის მამოძრავებელი სისტემის სიმულაცია - Xპერიმენტ Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/GSIBabu/Fish_Sim/main/favicon.ico">
     <style>
         body { margin: 0; overflow: hidden; font-family: sans-serif; background-color: #111827; }
         canvas { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
@@ -29,7 +29,49 @@
             z-index: 10;
         }
         /* Basic slider look */
-        input[type="range"] { accent-color: #3b82f6; }
+        input[type="range"] {
+             accent-color: #3b82f6;
+             -webkit-appearance: none; /* Override default look */
+             appearance: none;
+             width: 100%; /* Full width */
+             height: 16px; /* Track height */
+             background: #d1d5db; /* Track background */
+             border-radius: 8px; /* Rounded track */
+             outline: none;
+             cursor: pointer;
+        }
+
+        /* Thumb for Webkit browsers (Chrome, Safari, Edge) */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 32px; /* Thumb width - much larger */
+            height: 32px; /* Thumb height - much larger */
+            background: #3b82f6; /* Thumb background color */
+            border-radius: 50%; /* Circular thumb */
+            cursor: pointer;
+            margin-top: -8px; /* Center thumb vertically (half of thumb height - half of track height) */
+        }
+
+        /* Thumb for Firefox */
+        input[type="range"]::-moz-range-thumb {
+            width: 32px; /* Thumb width - much larger */
+            height: 32px; /* Thumb height - much larger */
+            background: #3b82f6; /* Thumb background color */
+            border-radius: 50%; /* Circular thumb */
+            cursor: pointer;
+            border: none; /* Remove default border */
+        }
+
+        /* Track for Firefox */
+        input[type="range"]::-moz-range-track {
+            width: 100%;
+            height: 16px;
+            background: #d1d5db;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
         .value-indicator {
             /* font-size: 22px; */ /* Controlled by Tailwind now */
             font-weight: 500;
@@ -155,7 +197,7 @@
     <!-- Stacks below wrapper on mobile, fixed width side panel on large screens -->
     <!-- Mobile: Fixed 2/5 height, no scroll -->
     <div class="w-full lg:w-64 bg-white p-2 lg:p-4 shadow-lg border-t lg:border-t-0 lg:border-l border-gray-300 flex flex-col gap-1 lg:gap-4 overflow-hidden lg:overflow-y-auto h-1/2 lg:h-screen flex-shrink-0"> <!-- Changed from h-2/5 -->
-        <h2 class="text-4xl lg:text-3xl font-semibold text-black border-b border-gray-300 pb-0.5 lg:pb-2">მართვის პანელი</h2>
+        <!-- <h2 class="text-4xl lg:text-3xl font-semibold text-black border-b border-gray-300 pb-0.5 lg:pb-2">მართვის პანელი</h2> --> <!-- Heading Removed -->
 
         <div>
             <h3 class="text-4xl lg:text-3xl font-semibold text-gray-800 text-center">ფორმა და ზომა</h3>
@@ -165,42 +207,42 @@
                 <div>
                     <label for="lengthSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">სიგრძე</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="lengthSlider" min="1" max="5" value="3" step="0.1" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="lengthSlider" min="1" max="5" value="3" step="0.1" class="flex-grow"> <!-- Removed height classes -->
                         <span id="lengthValue" class="value-indicator text-2xl lg:text-xl">3.0</span>
                     </div>
                 </div>
                  <div>
                     <label for="widthSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">სიგანე</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="widthSlider" min="0.2" max="1.5" value="0.5" step="0.05" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="widthSlider" min="0.2" max="1.5" value="0.5" step="0.05" class="flex-grow"> <!-- Removed height classes -->
                         <span id="widthValue" class="value-indicator text-2xl lg:text-xl">0.50</span>
                     </div>
                 </div>
                  <div>
                     <label for="heightSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">სიმაღლე</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="heightSlider" min="0.2" max="1.5" value="0.4" step="0.05" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="heightSlider" min="0.2" max="1.5" value="0.4" step="0.05" class="flex-grow"> <!-- Removed height classes -->
                         <span id="heightValue" class="value-indicator text-2xl lg:text-xl">0.40</span>
                     </div>
                 </div>
                  <div>
                     <label for="pointinessSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">წვეტიანობა</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="pointinessSlider" min="0.1" max="1" value="0.5" step="0.05" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="pointinessSlider" min="0.1" max="1" value="0.5" step="0.05" class="flex-grow"> <!-- Removed height classes -->
                         <span id="pointinessValue" class="value-indicator text-2xl lg:text-xl">0.50</span>
                     </div>
                 </div>
                  <div>
                     <label for="roundnessSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">სიმრგვალე</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="roundnessSlider" min="0.1" max="1" value="0.6" step="0.05" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="roundnessSlider" min="0.1" max="1" value="0.6" step="0.05" class="flex-grow"> <!-- Removed height classes -->
                         <span id="roundnessValue" class="value-indicator text-2xl lg:text-xl">0.60</span>
                     </div>
                 </div>
                  <div>
                     <label for="tailFinSizeSlider" class="block text-gray-700 font-medium text-3xl lg:text-2xl">კუდის ფარფლის ზომა</label>
                     <div class="flex items-center gap-1 lg:gap-2"> <!-- Mobile: gap-1 -->
-                        <input type="range" id="tailFinSizeSlider" min="0.1" max="1.5" value="0.5" step="0.05" class="flex-grow h-12 lg:h-auto">
+                        <input type="range" id="tailFinSizeSlider" min="0.1" max="1.5" value="0.5" step="0.05" class="flex-grow"> <!-- Removed height classes -->
                         <span id="tailFinSizeValue" class="value-indicator text-2xl lg:text-xl">0.50</span>
                     </div>
                 </div>
